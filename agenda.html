@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <ul class="menu-container">
+        <li>
+            <img class="logo" src="imgs/logo.png" alt="Logo do Sistema">
+            <span class="titulo-logo">ADV-System</span>
+        </li>  
+        <li><a href="agenda.html">Agenda</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)">Gestão</a>
+            <div class="dropdown-content">
+                <a href="#item1">Gestão Clientes</a>
+                <a href="#item2">Gestão Documentos</a>
+                <a href="#item3">Gestão Autos</a>
+                <a href="#item4">Gestão Financeira</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)">Relatórios</a>
+            <div class="dropdown-content">
+                <a href="#relatorio1">Relatórios de Casos</a>
+                <a href="#relatorio2">Relatórios Financeiros</a>
+                <a href="#relatorio3">Relatórios de Atividades</a>
+                <a href="#relatorio4">Relatórios de Clientes</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)">Biblioteca Jurídica</a>
+            <div class="dropdown-content">
+                <a href="#livro1">Jurisprudência</a>
+                <a href="#livro2">Consulta processual</a>
+            </div>
+        </li>
+        <li>
+            <img class="user-icon" src="imgs/icone-usuario.png" alt="Ícone de Usuário">
+        </li>        
+    </ul>
+    <div class="calendario">
+        <div class="cabecalho">
+            <button id="mesAnterior">&lt;</button>
+            <h2 id="mesAno">Mês/Ano</h2>
+            <button id="mesSeguinte">&gt;</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dom</th>
+                    <th>Seg</th>
+                    <th>Ter</th>
+                    <th>Qua</th>
+                    <th>Qui</th>
+                    <th>Sex</th>
+                    <th>Sáb</th>
+                </tr>
+            </thead>
+            <tbody id="corpoCalendario">
+                <!-- DIAS DO MÊS -->
+            </tbody>          
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
