@@ -79,37 +79,59 @@
 }
 
 .inicio {
-    color: #000;
-    font-size: 20px;
-    font-style: normal;
+    margin-left: 30px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inicio h2 {
+    font-size: 25px;
     font-weight: 600;
-    padding-top: 46px;
-    margin-left: 35px;
     font-family: 'Poppins', sans-serif;
 }
 
-.retangulo1 {
-    width: 84px;
-    height: 31px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #5EA3E2;
-    margin-left: 35px;
-    margin-top: 10px;
+.pesquisar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    position: relative;
+    margin-right: 20px;
 }
 
-.retangulo1 p {
-    color: #FFFFFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 4px;
-    padding-left: 11px;
-    padding-bottom: 5px;
+.pesquisar .lupa {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+.pesquisar input[type="text"] {
+    padding: 10px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right:0px;
+    border-bottom: 1px black solid;
+    font-size: 14px;
+    width: 250px;
+}
+
+
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px; 
+    width: 100%;
+    text-align: justify;
+    margin-left: 20px;
+}
+
+table th,
+table td {
+    padding: 5px; 
+    text-align: left;
 }
 
 .table-container {
@@ -117,47 +139,15 @@
     justify-content: center;
 }
 
-.retangulo2 {
-    width: 90%; 
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-collapse: collapse;
-    margin: 20px 10px; 
-    padding: 10px;
+.selecao {
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center; 
 }
 
-.retangulo3 {
-    background: #D9D9D9;
-    height: 43px;
+.selecao input[type="checkbox"] {
+    margin-right: 10px; 
 }
-
-.retangulo3 th {
-    text-align: center;
-    color: #000;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.retangulo4 td {
-    text-align: center;
-    color: #000;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.retangulo4 tr:nth-child(odd) {
-    background-color: #f0f0f0;
-}
-
-.retangulo2 .status {
-    width: 13.26px;
-    height: 11.021px;
-    flex-shrink: 0;
-    vertical-align: middle;
-}
-
-
 

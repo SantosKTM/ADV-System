@@ -10,14 +10,14 @@
     <nav id="menu">
         <ul>
             <li>
-                <img src="imgs/logo.png" alt="Logo da Empresa"> <!-- Adicione sua imagem de logo aqui -->
+                <img src="imgs/logo.png" alt="Logo da Empresa">
             </li>
             <li><a href="#">Agenda</a></li>
             <li>
                 <a href="#">Gestão</a>
                 <ul>
                     <li><a href="gestao-clientes.html">Gestão Clientes</a></li>
-                    <li><a href="#">Gestão Documentos</a></li>
+                    <li><a href="gestao-documentos.html">Gestão Documentos</a></li>
                     <li><a href="#">Gestão Autos</a></li>
                     <li><a href="#">Gestão Financeira</a></li>
                 </ul>
@@ -49,78 +49,91 @@
     <a href="#">
         <div class="retangulo1">
             <div class="icone">
-                <img src="public/images/icon-plus.png" alt="">
+                <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
             </div>
             <p>Novo</p>
         </div>
     </a>
     
-    <table class="retangulo2">
-        <thead class="retangulo3">
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Endereço</th>
-                <th>Telefone</th>
-                <th>E-mail</th>
-                <th>Nascimento</th>
-                <th>Tipo cliente</th>
-                <th>Data de Cadastro</th>
-                <th>Obs</th>
-            </tr>
-        </thead>
-        <tbody class="retangulo4">
-            <tr>
-                <td>1</td>
-                <td>Gabriel Fernando Moreira Durão</td>
-                <td>123.456.789.00</td>
-                <td>Rua São Caetano, 58, Ipatinga-Mg 35164-339</td>
-                <td>(31) 97186-9245</td>
-                <td>gabrielmdurao@gmail.com</td>
-                <td>27/01/2003</td>
-                <td>PF</td>
-                <td>12/10/2023</td>
-                <td>Obs</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Kyssila Thuane Morais Santos</td>
-                <td>123.456.789.00</td>
-                <td>Rua Ester, 466, Ipatinga-Mg 35164-169</td>
-                <td>(31) 98731-4681</td>
-                <td>kysssantos4@gmail.com</td>
-                <td>20/04/2004</td>
-                <td>PF</td>
-                <td>12/10/2023</td>
-                <td>Obs</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Gabriel Fernando Moreira Durão</td>
-                <td>123.456.789.00</td>
-                <td>Rua São Caetano, 58, Ipatinga-Mg 35164-339</td>
-                <td>(31) 97186-9245</td>
-                <td>gabrielmdurao@gmail.com</td>
-                <td>27/01/2003</td>
-                <td>PF</td>
-                <td>12/10/2023</td>
-                <td>Obs</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Kyssila Thuane Morais Santos</td>
-                <td>123.456.789.00</td>
-                <td>Rua Ester, 466, Ipatinga-Mg 35164-169</td>
-                <td>(31) 98731-4681</td>
-                <td>kysssantos4@gmail.com</td>
-                <td>20/04/2004</td>
-                <td>PF</td>
-                <td>12/10/2023</td>
-                <td>Obs</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class = "table-container">
+        <table class="retangulo2">
+            <thead>
+                <tr class = "retangulo3">
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>CPF / CNPJ</th>
+                    <th>TELEFONE</th>
+                    <th>E-MAIL</th>
+                    <th>ENDEREÇO</th>
+                    <th>NASCIMENTO</th>
+                    <th>TIPO CLIENTE</th>
+                    <th>STATUS</th>
+                    <th>OBS</th>
+                </tr>
+            </thead>
+            <tbody class="retangulo4">
+                <tr>
+                    <td>4</td>
+                    <td>Maria Silva</td>
+                    <td>35679856000100</td>
+                    <td>(11) 98765-4321</td>
+                    <td>maria@email.com</td>
+                    <td>Rua das Flores, 123 - Centro</td>
+                    <td>10/04/1985</td>
+                    <td>Pessoa Física</td>
+                    <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>João da Silva</td>
+                    <td>24681254000180</td>
+                    <td>(11) 98765-4321</td>
+                    <td>joao@email.com</td>
+                    <td>Rua das Flores, 123 - Centro</td>
+                    <td>10/04/1985</td>
+                    <td>Pessoa Jurídica</td>
+                    <td><img class="status" src="public/images/ellipse-18.png" alt=""></td>
+                    <td>Observação do cliente.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ana Maria</td>
+                    <td>12345678000100</td>
+                    <td>(11) 98765-4321</td>
+                    <td>ana@email.com</td>
+                    <td>Rua das Flores, 123 - Centro</td>
+                    <td>10/04/1985</td>
+                    <td>Pessoa Física</td>
+                    <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Antônio Carlos</td>
+                    <td>98765432000100</td>
+                    <td>(11) 98765-4321</td>
+                    <td>antoniocarlos@email.com</td>
+                    <td>Rua das Flores, 123 - Centro</td>
+                    <td>10/04/1985</td>
+                    <td>Pessoa Física</td>
+                    <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                    <td></td>
+                </tr>      
+                <tr>
+                    <td>6</td>
+                    <td>Luiza Fernanda</td>
+                    <td>65498723000100</td>
+                    <td>(11) 98765-4321</td>
+                    <td>luizafnnd@email.com</td>
+                    <td>Rua das Flores, 123 - Centro</td>
+                    <td>10/04/1985</td>
+                    <td>Pessoa Física</td>
+                    <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                    <td>Observação do cliente.</td>
+                </tr>          
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

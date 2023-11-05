@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesquisa com Tabela</title>
+    <script>
+        function performSearch() {
+            var input = document.getElementById("searchInput").value.toLowerCase();
+            var table = document.getElementById("dataTable");
+            var rows = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var match = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cellText = cells[j].textContent.toLowerCase();
+
+                    if (cellText.indexOf(input) > -1) {
+                        match = true;
+                        break;
+                    }
+                }
+
+                if (match) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+        function onKeyPress(event) {
+            if (event.key === "Enter") {
+                performSearch();
+            }
+        }
+    </script>
+</head>
+<body>
+    
+
+    <table id="dataTable">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>João</td>
+            <td>joao@example.com</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>maria@example.com</td>
+        </tr>
+        <tr>
+            <td>Pedro</td>
+            <td>pedro@example.com</td>
+        </tr>
+    </table>
+</body>
+</html>

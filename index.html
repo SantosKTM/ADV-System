@@ -1,46 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style-login.css">
+    <title>ADV-System</title>
 </head>
 <body>
-    <nav id="menu">
-        <ul>
-            <li>
-                <img src="imgs/logo.png" alt="Logo da Empresa"> <!-- Adicione sua imagem de logo aqui -->
-            </li>
-            <li><a href="#">Agenda</a></li>
-            <li>
-                <a href="#">Gestão</a>
-                <ul>
-                    <li><a href="gestao-clientes.html">Gestão Clientes</a></li>
-                    <li><a href="#">Gestão Documentos</a></li>
-                    <li><a href="#">Gestão Autos</a></li>
-                    <li><a href="#">Gestão Financeira</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Relatórios</a>
-                <ul>
-                    <li><a href="#">Relatórios de Casos</a></li>
-                    <li><a href="#">Relatórios Financeiros</a></li>
-                    <li><a href="#">Relatórios de Atividades</a></li>
-                    <li><a href="#">Relatórios de Clientes</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Biblioteca Jurídica</a>
-                <ul>
-                    <li><a href="#">Jurisprudência</a></li>
-                    <li><a href="#">Consulta processual</a></li>
-                </ul>
-            </li>
-            <li>
-                <img src="imgs/icone-usuario.png" alt="Ícone de Usuário">
-            </li>
-        </ul>
-    </nav>
+    <img class = "logo" src="imgs/logo.png" alt="">
+    <div class="quadrado">
+        <h3 class = "bemvindo">Bem-vindo</h3>
+        <h1 class = "entrar">Entrar</h1>
+        <div class = "entradas">
+            <p>Usuário</p>
+            <input type="text" class = "entrada">
+            <p>Senha</p>
+            <input type="password" class = "entrada">
+        </div>  
+        <a href="esqueceusenha.html"><p class = "esqueceusenha">Esqueceu a senha?</p></a>
+        <a href="principal.html"><button class = "entrarbotao">ENTRAR</button></a>
+        <p class = "novocadastro">Novo Cadastro? <a href="registro.html"><span>Registrar</span></a></h3>
+    </div>
 </body>
 </html>
