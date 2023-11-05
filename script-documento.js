@@ -1,37 +1,69 @@
-// Obtém elementos do DOM
-const campoPesquisa = document.getElementById("campoPesquisa");
-const tabelaDocumentos = document.getElementById("tabelaDocumentos");
-const checkboxSelecionarTodos = document.getElementById("selecionarTodos");
-const checkboxesDocumentos = document.querySelectorAll(".selecionarDocumento");
+document.getElementById("selecionarTodos").addEventListener("change", function () {
+    const checkboxes = document.querySelectorAll(".selecionarDocumento");
+    checkboxes.forEach(function (checkbox) {
+        checkbox.checked = this.checked;
+    }, this);
+});
 
-// Função para realizar a pesquisa
-function realizarPesquisa() {
-    const termoPesquisa = campoPesquisa.value.toLowerCase();
 
-    Array.from(tabelaDocumentos.querySelectorAll("tr")).forEach(function(row) {
-        const nomeDocumento = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
-        const recebedor = row.querySelector("td:nth-child(3)").textContent.toLowerCase();
+document.getElementById("imprimirDocumentos").addEventListener("click", function () {
+    const checkboxes = document.querySelectorAll(".selecionarDocumento");
+    let documentosSelecionados = [];
 
-        // Verifica se o termo de pesquisa corresponde ao nome do documento ou ao recebedor
-        if (nomeDocumento.includes(termoPesquisa) || recebedor.includes(termoPesquisa)) {
-            row.style.display = "table-row";
-        } else {
-            row.style.display = "none";
+    checkboxes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            documentosSelecionados.push(checkbox.parentElement.parentElement);
         }
     });
+
+    if (documentosSelecionados.length > 0) {
+        // Ocultar outros elementos ou estilos de página, se necessário
+        // ...
+
+        // Imprimir os documentos selecionados
+        documentosSelecionados.forEach(function (documento) {
+            documento.style.display = "block";
+        });
+
+        window.print();
+
+        // Restaurar a exibição dos documentos após a impressão
+        documentosSelecionados.forEach(function (documento) {
+            documento.style.display = "table-row";
+        });
+    } else {
+        alert("Nenhum documento selecionado para impressão.");
+    }
+});
+
+function performSearch() {
+    var input = document.getElementById("searchInput").value.toLowerCase();
+    var table = document.getElementById("table-container");
+    var rows = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName("td");
+        var match = false;
+
+        for (var j = 0; j < cells.length; j++) {
+            var cellText = cells[j].textContent.toLowerCase();
+
+            if (cellText.indexOf(input) > -1) {
+                match = true;
+                break;
+            }
+        }
+
+        if (match) {
+            rows[i].style.display = "";
+        } else {
+            rows[i].style.display = "none";
+        }
+    }
 }
 
-// Adiciona um ouvinte de evento para o campo de pesquisa ao pressionar a tecla "Enter"
-campoPesquisa.addEventListener("keyup", function(event) {
+function onKeyPress(event) {
     if (event.key === "Enter") {
-        realizarPesquisa();
+        performSearch();
     }
-});
-
-// Adiciona um ouvinte de evento para a tabela para atualizar o botão "Selecionar Todos" ao clicar nas caixas de seleção individuais
-tabelaDocumentos.addEventListener("change", function(event) {
-    if (event.target.classList.contains("selecionarDocumento")) {
-        const allChecked = Array.from(checkboxesDocumentos).every(checkbox => checkbox.checked);
-        checkboxSelecionarTodos.checked = allChecked;
-    }
-});
+}

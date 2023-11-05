@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style-documentos.css">
+    <link rel="icon" href="imgs/advogado.png">
     <title>Gestão de Documentos</title>
 </head>
 <body>
@@ -54,7 +55,9 @@
     <div class="selecao">
         <input type="checkbox" id="selecionarTodos">
         <label for="selecionarTodos">Selecionar Todos</label>
+        <button id="imprimirDocumentos"><img src="imgs/impressora.png" alt=""></button>
     </div>
+    
 
     <div id="table-container">
         <table>
@@ -96,53 +99,13 @@
                     <td>Aviso de responsabilidade</td>
                     <td>Pedro Henrique</td>
                     <td>14/09/2021</td>
-                    <td><img class="status" src="public/images/ellipse-18.png" alt=""> Aguardando assinatur</td>
+                    <td><img class="status" src="public/images/ellipse-18.png" alt=""> Aguardando assinatura</td>
                     <td>05/11/2023</td> 
                 </tr>     
             </tbody>
         </table>
     </div>
 
-    <script>
-        document.getElementById("selecionarTodos").addEventListener("change", function () {
-            const checkboxes = document.querySelectorAll(".selecionarDocumento");
-            checkboxes.forEach(function (checkbox) {
-                checkbox.checked = this.checked;
-            }, this);
-        });
-
-        function performSearch() {
-            var input = document.getElementById("searchInput").value.toLowerCase();
-            var table = document.getElementById("table-container");
-            var rows = table.getElementsByTagName("tr");
-
-            for (var i = 1; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName("td");
-                var match = false;
-
-                for (var j = 0; j < cells.length; j++) {
-                    var cellText = cells[j].textContent.toLowerCase();
-
-                    if (cellText.indexOf(input) > -1) {
-                        match = true;
-                        break;
-                    }
-                }
-
-                if (match) {
-                    rows[i].style.display = "";
-                } else {
-                    rows[i].style.display = "none";
-                }
-            }
-        }
-
-        function onKeyPress(event) {
-            if (event.key === "Enter") {
-                performSearch();
-            }
-        }
-
-    </script>
+    <script src="script-documento.js"></script>
 </body>
 </html>

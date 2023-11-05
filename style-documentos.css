@@ -151,3 +151,27 @@ table td {
     margin-right: 10px; 
 }
 
+
+#imprimirDocumentos {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+#imprimirDocumentos img {
+    width: 20px; 
+    vertical-align: middle;
+    margin-left: 20px; 
+}
+
+.selecao {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
