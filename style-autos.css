@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+}
+
+#menu ul li img {
+    width: 90px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#menu ul li:last-child img {
+    width: 40px;
+    margin-top: 10px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+#menu {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 0;
+}
+
+#menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    position: relative;
+}
+
+#menu ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+#menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+#menu ul li:hover ul {
+    display: block;
+}
+
+#menu ul li ul li {
+    width: 200px;
+}
+
+#menu ul li ul li a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+#menu ul li ul li:hover {
+    background-color: #ddd;
+}
+
+main {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+main h2 {
+    margin-top: 30px;
+}
+
+.table-container {
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button img {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+}
+
+.andamento, .urgente, .concluido {
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.andamento {
+    background-color: rgb(248, 248, 176); 
+    color: #DFA510; 
+}
+
+.urgente {
+    background-color: rgb(248, 200, 200); 
+    color: red; 
+}
+
+.concluido {
+    background-color: rgb(178, 241, 178); 
+    color: green; 
+}
+
+.legenda {
+    margin-top: 130px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.legenda p {
+    margin: 0;
+    position: relative;
+    padding: 20px;
+    color: #797979;
+}
+
+.legenda p span {
+    display: block; 
+    font-size: 24px; 
+    margin-top: 5px;
+    position: absolute;
+    top: -30px; 
+    font-weight: bold;
+}
+
+#concluidoCount {
+    color: #1A932E;
+}
+
+#andamentoCount {
+    color: #DFA510;
+}
+
+#urgenteCount {
+    color: red;
+}
+
+#totalCount {
+    color: black;
+}
+
+.retangulo1 {
+    width: 84px;
+    height: 31px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #5EA3E2;
+    margin-left: 35px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retangulo1 p {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 4px;
+    padding-left: 11px;
+    padding-bottom: 5px;
+}
+
+
+.retangulo2 {
+    width: 90%; 
+    border-collapse: collapse;
+    margin: 20px 10px; 
+    padding: 10px;
+}
+
+.retangulo3 {
+    height: 43px;
+}
+
+.retangulo3 th {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.retangulo4 td {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+.retangulo2 .status {
+    width: 13.26px;
+    height: 11.021px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}

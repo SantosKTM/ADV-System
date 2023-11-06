@@ -142,7 +142,7 @@ table td {
 .selecao {
     margin-top: 5px;
     margin-left: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center; 
 }
@@ -171,7 +171,70 @@ table td {
     align-items: center;
 }
 
+.retangulo1 {
+    width: 84px;
+    height: 31px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #5EA3E2;
+    margin-left: 35px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
 
+.retangulo1 p {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 4px;
+    padding-left: 11px;
+    padding-bottom: 5px;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.retangulo2 {
+    width: 90%; 
+    border-collapse: collapse;
+    margin: 20px 10px; 
+    padding: 10px;
+}
+
+.retangulo3 {
+    height: 43px;
+}
+
+.retangulo3 th {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.retangulo4 td {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+.retangulo2 .status {
+    width: 13.26px;
+    height: 11.021px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
 
 
 

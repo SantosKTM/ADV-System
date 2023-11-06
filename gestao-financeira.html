@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/advogado.png">
+    <link rel="stylesheet" type="text/css" href="style-financeira.css">
+</head>
+<body>
+    <nav id="menu">
+        <ul>
+            <li>
+                <img src="imgs/logo.png" alt="Logo da Empresa"> 
+            </li>
+            <li><a href="#">Agenda</a></li>
+            <li>
+                <a href="#">Gestão</a>
+                <ul>
+                    <li><a href="gestao-clientes.html">Gestão Clientes</a></li>
+                    <li><a href="gestao-documentos.html">Gestão Documentos</a></li>
+                    <li><a href="gestao-autos.html">Gestão Autos</a></li>
+                    <li><a href="gestao-financeira.html">Gestão Financeira</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Relatórios</a>
+                <ul>
+                    <li><a href="#">Relatórios de Casos</a></li>
+                    <li><a href="#">Relatórios Financeiros</a></li>
+                    <li><a href="#">Relatórios de Atividades</a></li>
+                    <li><a href="#">Relatórios de Clientes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Biblioteca Jurídica</a>
+                <ul>
+                    <li><a href="#">Jurisprudência</a></li>
+                    <li><a href="#">Consulta processual</a></li>
+                </ul>
+            </li>
+            <li>
+                <img src="imgs/icone-usuario.png" alt="Ícone de Usuário">
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="inicio">
+        <h2>Financeiro</h2>
+        <input type="text" id="searchInput" placeholder="Pesquisar">
+    </div>    
+
+    <a href="#">
+        <div class="retangulo1">
+            <div class="icone">
+                <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+            </div>
+            <p>Novo</p>
+        </div>
+    </a>
+    
+    <div class="table-container">
+        <table class="retangulo2">
+            <thead>
+                <tr class="retangulo3">
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>CPF / CNPJ</th>
+                    <th>TELEFONE</th>
+                    <th>TIPO CLIENTE</th>
+                    <th>DATA DE PAGAMENTO</th>
+                    <th>VALOR A RECEBER</th>
+                    <th>FORMA DE PAGAMENTO</th>
+                    <th>OBS</th>
+                </tr>
+            </thead>
+            <tbody class="retangulo4">
+                <tr>
+                    <td>001</td>
+                    <td>João da Silva</td>
+                    <td>987654321</td>
+                    <td>(11) 98765-4321</td>
+                    <td>Pessoa Física</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Dinheiro</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Maria das Neves</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Cartão</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Antônio dos Santos</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Boleto</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Ana Maria de Oliveira</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Transferência</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>José Carlos Ferreira</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Cheque</td>
+                    <td>Observação...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function () {
+            searchTable();
+        });
+    
+        function searchTable() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.querySelector(".retangulo2");
+            var tr = table.getElementsByTagName("tr");
+    
+            for (var i = 0; i < tr.length; i++) {
+                var matchFound = false;
+    
+                for (var j = 0; j < tr[i].getElementsByTagName("td").length; j++) {
+                    var td = tr[i].getElementsByTagName("td")[j];
+                    if (td) {
+                        var textValue = td.textContent || td.innerText;
+    
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                }
+    
+                if (matchFound) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
