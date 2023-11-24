@@ -41,24 +41,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.container .linha-1 {
-    display: flex;
-    flex-direction: row; 
-    align-items: center; 
-    justify-content: space-between; 
-}
-
-
-.container .linha-1 p {
-    margin-bottom: 0px; 
-}
-
-.container .linha-1 .nome {
-    width: 200px; 
-    margin-top: 5px; 
-    padding-right: 30px;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -78,6 +60,7 @@ form {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
 }
 
 label {
@@ -97,6 +80,7 @@ select {
 }
 
 input[type="submit"] {
+    margin-top: 10px;
     background-color: #007BFF;
     color: #fff;
     border: none;
