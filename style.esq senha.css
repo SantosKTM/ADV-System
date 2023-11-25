@@ -31,7 +31,7 @@
 .quadrado {
     border: 1px solid #bbbbbb;
     height: 320px;
-    width: 450px;
+    width: 370px;
     position: absolute;
     left: 50%;
     top: 55%;
@@ -60,7 +60,6 @@
     margin-right: 25px;
     font-size: 16px;
     color: #bbbbbb;
-    width: 200px;
 }
 
 .quadrado .enviar {
@@ -70,7 +69,7 @@
     border-radius: 5px;
     padding: 10px;
     margin-right: 25px;
-    width: 400px;
+    width: 300px;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -86,5 +85,5 @@
 }
 
 .esqueceu-senha input[type="email"] {
-    width: 400px;
+    width: 300px;
 }

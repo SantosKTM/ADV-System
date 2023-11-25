@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-#menu .logo {
+.navbar-brand img{
     width: 80px; 
 }
 
