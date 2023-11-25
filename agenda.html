@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style-teste.css">
 </head>
 <body>
-    <ul class="menu-container">
-        <li>
-            <img class="logo" src="imgs/logo.png" alt="Logo do Sistema">
-            <span class="titulo-logo">ADV-System</span>
-        </li>  
-        <li><a href="agenda.html">Agenda</a></li>
-        <li class="dropdown">
-            <a href="javascript:void(0)">Gestão</a>
-            <div class="dropdown-content">
-                <a href="#item1">Gestão Clientes</a>
-                <a href="#item2">Gestão Documentos</a>
-                <a href="#item3">Gestão Autos</a>
-                <a href="#item4">Gestão Financeira</a>
+ <div class="container">
+ <!--Cria uma barra de navegação usando as classes do Bootstrap para estilização.-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      
+      <!--Link para a página principal com um logotipo dentro da barra de navegação.-->
+      <a class="navbar-brand" href="teste-principal.html"><img src="imgs/logo principal.png" alt=""></a>
+      
+      <!-- Botão de alternância para telas menores (usado em dispositivos móveis), mostrando e ocultando itens do menu de navegação.-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!--Define a área do menu de navegação que pode ser colapsada.-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <!--Lista não ordenada que contém os itens do menu de navegação.-->
+        <ul class="navbar-nav">
+          <!-- Itens de menu que têm a capacidade de exibir um menu suspenso (dropdown) ao serem clicados.-->
+          <li class="nav-item">
+            <a class="nav-link" href="agenda.html">
+              Agenda
+            </a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Gestão
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="gestao-clientes.html">Gestão Clientes</a>
+              <a class="dropdown-item" href="gestao-documentos.html">Gestão Documentos</a>
+              <a class="dropdown-item" href="gestao-autos.html">Gestão Autos</a>
+              <a class="dropdown-item" href="gestao-financeira.html">Gestão Financeira</a>
             </div>
-        </li>
-        <li class="dropdown">
-            <a href="javascript:void(0)">Relatórios</a>
-            <div class="dropdown-content">
-                <a href="#relatorio1">Relatórios de Casos</a>
-                <a href="#relatorio2">Relatórios Financeiros</a>
-                <a href="#relatorio3">Relatórios de Atividades</a>
-                <a href="#relatorio4">Relatórios de Clientes</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Relatórios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="relatorio-caso.html">Relatórios de Casos</a>
+              <a class="dropdown-item" href="#">Relatórios Financeiros</a>
+              <a class="dropdown-item" href="#">Relatórios de Atividades</a>
+              <a class="dropdown-item" href="#">Relatórios de Clientes</a>
             </div>
-        </li>
-        <li class="dropdown">
-            <a href="javascript:void(0)">Biblioteca Jurídica</a>
-            <div class="dropdown-content">
-                <a href="#livro1">Jurisprudência</a>
-                <a href="#livro2">Consulta processual</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Relatórios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Relatórios de Casos</a>
+              <a class="dropdown-item" href="#">Relatórios Financeiros</a>
             </div>
-        </li>
-        <li>
-            <img class="user-icon" src="imgs/icone-usuario.png" alt="Ícone de Usuário">
-        </li>        
-    </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+ </div>
+
     <div class="calendario">
         <div class="cabecalho">
             <button id="mesAnterior">&lt;</button>
@@ -66,5 +95,8 @@
         </table>
     </div>
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

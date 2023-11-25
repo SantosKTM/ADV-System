@@ -10,74 +10,128 @@
     text-decoration: none;
 }
 
-#menu ul li img {
-    width: 90px;
-    height: auto;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-#menu ul li:last-child img {
-    width: 40px;
-    margin-top: 10px;
-    height: auto;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-
 #menu {
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 5px 0;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu .logo {
+    width: 80px; 
+}
+
+#menu .user-icon {
+    width: 30px; 
 }
 
 #menu ul {
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-#menu ul li {
+#menu li {
     position: relative;
 }
 
-#menu ul li a {
-    color: #333;
+#menu a {
     text-decoration: none;
+    color: black;
+    padding: 10px 15px;
     display: block;
 }
 
-#menu ul li ul {
+#menu ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background: white;
+}
+
+#menu ul ul li {
+    width: 200px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#menu ul ul li a {
+    padding: 10px 15px;
+}
+
+#menu li:hover > ul {
+    display: block;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    #menu .logo {
+        order: -1;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+
+    #menu .user-icon {
+        margin-left: auto;
+    }
+
+    #menu ul {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    #menu ul:not(.active) {
+        display: none;
+    }
+
+    #menu ul.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+    }
+
+    /* Mostrar o ícone do menu */
+    .menu-icon {
+        display: block;
+    }
+}
+
+.user-icon-wrapper {
+    position: relative;
+}
+
+.user-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background: white;
+    padding: 0;
+    list-style: none;
 }
 
-#menu ul li:hover ul {
+.user-menu.active {
     display: block;
 }
-
-#menu ul li ul li {
-    width: 200px;
-}
-
-#menu ul li ul li a {
-    color: #333;
-    padding: 10px 20px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-#menu ul li ul li:hover {
-    background-color: #ddd;
-}
-
 main {
     margin-top: 40px;
     margin-bottom: 20px;

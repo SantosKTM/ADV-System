@@ -1,12 +1,17 @@
 @font-face {
     font-family: 'poppins';
     src: url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
     font-family: 'poppins-fina';
     src: url(fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
     font-family: 'poppinsmedia';
     src: url(fonts/Poppins/Poppins-Medium.ttf);
 }
-
 
 * {
     margin: 0;
@@ -25,11 +30,11 @@
 
 .quadrado {
     border: 1px solid #bbbbbb;
-    height: 500px;
-    width: 400px;
+    height: 320px;
+    width: 450px;
     position: absolute;
     left: 50%;
-    top: 60%;
+    top: 55%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -38,76 +43,48 @@
 .quadrado .bemvindo {
     padding-left: 25px;
     padding-top: 40px;
-    font-family: 'poppins-fina',sans-serif;
+    font-family: 'poppins-fina', sans-serif;
 }
 
-.quadrado .entrar{
+.quadrado .esqueceu-senha {
     padding-left: 25px;
-    font-family: 'poppins',sans-serif;  
-}
-
-.quadrado p {
     padding-top: 20px;
-    padding-left: 25px;
     font-size: 18px;
-    font-family: 'poppins-fina',sans-serif;
+    font-family: 'poppins-fina', sans-serif;
 }
 
 .quadrado .entrada {
     border: 1px #bbbbbb solid;
     border-radius: 6px;
     padding: 10px;
-    margin-left: 25px;
     margin-right: 25px;
-    font-size: 12px;
-    color: #bbbbbb;
-    width: 350px;
-}
-
-
-.quadrado .esqueceusenha {
-    font-family: 'poppins-fina',sans-serif;
     font-size: 16px;
-    color: #4D4D4D;
-    padding-left: 230px;
-    text-decoration: none;
+    color: #bbbbbb;
+    width: 200px;
 }
 
-.quadrado a {
-    text-decoration: none;
-}
-
-.quadrado button {
+.quadrado .enviar {
     background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px;
-    margin-left: 25px;
-    margin-right: 2px;
-    width: 350px;
+    margin-right: 25px;
+    width: 400px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-.quadrado .novocadastro {
-    font-family: 'poppins-fina',sans-serif;
-    color: #4D4D4D;
+.quadrado .voltar {
     text-align: center;
-    font-size: 16px;
-    padding-bottom: 5px;
+    padding-top: 20px;
 }
 
-.quadrado .novocadastro span {
-    text-decoration: none;
-    margin-top: 5px;
-    font-family: 'poppins-fina',sans-serif;
-    font-weight: bold;
-    color: black;
-}
-
-.quadrado .novocadastro span:hover {
+.quadrado a {
     text-decoration: none;
     color: #4D4D4D;
-    cursor: pointer;
 }
 
+.esqueceu-senha input[type="email"] {
+    width: 400px;
+}
