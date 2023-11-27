@@ -10,6 +10,11 @@
     text-decoration: none;
 }
 
+body {
+    margin: 0;
+}
+
+
 #menu {
     background-color: #ffffff;
     color: #000000;
@@ -114,7 +119,7 @@
 main {
     margin-top: 40px;
     margin-bottom: 20px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 main h2 {
     margin-top: 10px;
@@ -122,7 +127,7 @@ main h2 {
 
 .table-container {
     margin-top: 30px;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 table {
@@ -163,42 +168,58 @@ button img {
 }
 
 .urgente {
+    padding-top: 15px;
     background-color: rgb(248, 200, 200); 
-    color: red; 
+    color: red;
+    display: flex; /* Para usar flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
 }
+
 
 .concluido {
     background-color: rgb(178, 241, 178); 
     color: green; 
 }
 
+/* Estilos para a caixa sombreada */
+/* Estilos para a caixa sombreada */
 .legenda {
-    margin-top: 10px; /* Ajuste conforme necessário para o espaçamento */
+    margin-left: 20px;
+    margin-top: 30px;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    position: relative; /* Remova a posição absoluta */
+    width: 300px;
 }
 
-
-.legenda p {
-    margin: 0;
-    position: relative;
-    padding: 20px;
-    color: #797979;
+/* Estilos para cada informação */
+.info {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.legenda p span {
-    display: block; 
-    font-size: 24px; 
-    margin-top: 5px;
-    position: absolute;
-    top: -30px; 
+.info span {
+    font-size: 24px;
     font-weight: bold;
+    color: black;
+    margin-right: 10px;
 }
+
+.info p {
+    margin: 0;
+    color: #797979;
+    flex-grow: 1;
+    text-align: left;
+}
+
+
 
 #concluidoCount {
     color: #1A932E;
@@ -222,7 +243,7 @@ button img {
     flex-shrink: 0;
     border-radius: 5px;
     background: #5EA3E2;
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 10px;
     display: flex;
     align-items: center;
