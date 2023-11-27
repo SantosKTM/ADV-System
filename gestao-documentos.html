@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style-documentos.css">
+    <link rel="stylesheet" type="text/css" href="style-autos.css">
     <link rel="icon" href="imgs/icon redondo logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Gestão de Documentos</title>
 </head>
 <body>
-      <!--MENU-->
- <div class="container">
+  <div class="container">
     <!--Cria uma barra de navegação usando as classes do Bootstrap para estilização.-->
        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
          
          <!--Link para a página principal com um logotipo dentro da barra de navegação.-->
-         <a class="navbar-brand" href="teste-principal.html"><img src="imgs/logo principal.png" alt=""></a>
+         <a class="navbar-brand" href="principal.html"><img src="imgs/logo principal.png" alt=""></a>
          
          <!-- Botão de alternância para telas menores (usado em dispositivos móveis), mostrando e ocultando itens do menu de navegação.-->
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,83 +77,100 @@
            </ul>
          </div>
        </nav>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!--FINAL MENU-->
+  </div>
 
-    <div class="inicio">
-        <h2>Documentos</h2>
-        <div class="pesquisar">
-            <input type="text" id="searchInput" onkeydown="onKeyPress(event)" placeholder="Pesquisar por..." />
+  <main>
+    <div class="header">
+      <h2>Autos</h2>
+      <div class="selecao">
+        <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome...">
+        <div class="retangulo1">
+          <div class="icone">
+            <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+          </div>
+          <p>Novo</p>
         </div>
-    </div>
-    
-    <div class="selecao">
+      </div>
+      <div class="selecao">
         <input type="checkbox" id="selecionarTodos">
         <label for="selecionarTodos">Selecionar Todos</label>
         <button id="imprimirDocumentos"><img src="imgs/impressora.png" alt=""></button>
+      </div>
     </div>
     
-    <a href="#">
-        <div class="retangulo1">
-            <div class="icone">
-                <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
-            </div>
-            <p>Novo</p>
-        </div>
-    </a>
-
     
-    <div id="table-container" class="table-responsive">
-        <table>
+    <div class="legenda-container">
+      <div class="legenda">
+        <div class="info">
+          <span id="totalCount">0</span>
+          <p>Total</p>
+        </div>
+        <div class="info">
+          <span id="concluidoCount">0</span>
+          <p>Concluidos</p>
+        </div>
+        <div class="info">
+          <span id="andamentoCount">0</span>
+          <p>Em espera</p>
+        </div>
+        <div class="info">
+          <span id="urgenteCount">0</span>
+          <p>Urgente</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <div class="table-container">
+    <div class="table-responsive">
+      <table class="table">
             <thead>
                 <tr>
                     <th></th>
-                    <th>Nome do documento</th>
-                    <th>Recebedor</th>
-                    <th>Data de Criação</th>
+                    <th>Nome</th>
+                    <th>Responsável</th>
+                    <th>Início</th>
+                    <th>Final</th>
                     <th>Status</th>
-                    <th>Ultima modificação</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>
-                        <input type="checkbox" class="selecionarDocumento">
-                    </td>
-                    <td>Contrato 01</td>
-                    <td>Joana Silva</td>
-                    <td>30/06/2021</td>
-                    <td><img class="status" src="public/images/elipse verde.png" alt="">  Assinado</td>
-                    <td>30/07/2021</td>
+                  <td><input type="checkbox" class="select-checkbox"></td>
+                  <td>Kyssila Thuane Morais Santos</td>
+                  <td>Rafael Augusto da Silva</td>
+                  <td>15/06/2021</td>
+                  <td>30/09/2021</td>
+                  <td>
+                    <div class="andamento">Espera</div>
+                  </td>
+                  <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
+                  <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
                 </tr>
                 <tr>
+                  <td><input type="checkbox" class="select-checkbox"></td>
+                    <td>Lucas Antonio dos Reis</td>
+                    <td>Maria Helena Ferreira</td>
+                    <td>18/07/2021</td>
+                    <td>24/09/2021</td>
                     <td>
-                        <input type="checkbox" class="selecionarDocumento">
+                        <div class="concluido">Concluído</div>
                     </td>
-                    <td>Termo de compromisso</td>
-                    <td>Maria Rodrigues</td>
-                    <td>15/08/2021</td>
-                    <td><img class="status" src="public/images/elipse verde.png" alt="">  Assinado</td>
-                    <td>19/08/2021</td>
+                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
+                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
                 </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" class="selecionarDocumento">
-                    </td>
-                    <td>Aviso de responsabilidade</td>
-                    <td>Pedro Henrique</td>
-                    <td>14/09/2021</td>
-                    <td><img class="status" src="public/images/ellipse-18.png" alt=""> Aguardando assinatura</td>
-                    <td>05/11/2023</td> 
-                </tr>     
             </tbody>
         </table>
     </div>
+  </div>
     
-
-    <script src="script-documento.js"></script>
+  <script src="script-pesquisa-selecionar.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>
