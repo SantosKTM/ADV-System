@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/advogado.png">
+    <link rel="stylesheet" type="text/css" href="style-financeira.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <!--Cria uma barra de navegação usando as classes do Bootstrap para estilização.-->
+           <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+             
+             <!--Link para a página principal com um logotipo dentro da barra de navegação.-->
+             <a class="navbar-brand" href="teste-principal.html"><img src="imgs/logo principal.png" alt=""></a>
+             
+             <!-- Botão de alternância para telas menores (usado em dispositivos móveis), mostrando e ocultando itens do menu de navegação.-->
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             
+             <!--Define a área do menu de navegação que pode ser colapsada.-->
+             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+               
+               <!--Lista não ordenada que contém os itens do menu de navegação.-->
+               <ul class="navbar-nav">
+                 <!-- Itens de menu que têm a capacidade de exibir um menu suspenso (dropdown) ao serem clicados.-->
+                 <li class="nav-item">
+                   <a class="nav-link" href="#">
+                     Agenda
+                   </a>
+                 </li>
+       
+       
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Gestão
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="gestao-clientes.html">Gestão Clientes</a>
+                     <a class="dropdown-item" href="gestao-documentos.html">Gestão Documentos</a>
+                     <a class="dropdown-item" href="gestao-autos.html">Gestão Autos</a>
+                     <a class="dropdown-item" href="gestao-financeira.html">Gestão Financeira</a>
+                   </div>
+                 </li>
+       
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Relatórios
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="#">Relatórios de Casos</a>
+                     <a class="dropdown-item" href="#">Relatórios Financeiros</a>
+                     <a class="dropdown-item" href="#">Relatórios de Atividades</a>
+                     <a class="dropdown-item" href="#">Relatórios de Clientes</a>
+                   </div>
+                 </li>
+       
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Biblioteca Jurídica
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="#">Jurisprudência</a>
+                     <a class="dropdown-item" href="#">Consulta processual</a>
+                   </div>
+                 </li>
+       
+                 <li class="nav-item">
+                   <a class="nav-link" href="#">
+                       <img src="imgs/icone-usuario.png" alt="Ícone de Usuário" class="img-fluid rounded-circle" style="max-width: 35px;">
+                   </a>
+                 </li>
+                 
+               </ul>
+             </div>
+           </nav>
+    </div>
+    
+    <div class="inicio">
+        <h2>Financeiro</h2>
+        <input type="text" id="searchInput" placeholder="Pesquisar">
+    </div>    
+
+    <a href="#">
+        <div class="retangulo1">
+            <div class="icone">
+                <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+            </div>
+            <p>Novo</p>
+        </div>
+    </a>
+    
+    <div class="table-container">
+        <table class="retangulo2">
+            <thead>
+                <tr class="retangulo3">
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th>CPF / CNPJ</th>
+                    <th>TELEFONE</th>
+                    <th>TIPO CLIENTE</th>
+                    <th>DATA DE PAGAMENTO</th>
+                    <th>VALOR A RECEBER</th>
+                    <th>FORMA DE PAGAMENTO</th>
+                    <th>OBS</th>
+                </tr>
+            </thead>
+            <tbody class="retangulo4">
+                <tr>
+                    <td>001</td>
+                    <td>João da Silva</td>
+                    <td>987654321</td>
+                    <td>(11) 98765-4321</td>
+                    <td>Pessoa Física</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Dinheiro</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Maria das Neves</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Cartão</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Antônio dos Santos</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Boleto</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Ana Maria de Oliveira</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Transferência</td>
+                    <td>Observação...</td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>José Carlos Ferreira</td>
+                    <td>123456789</td>
+                    <td>(11) 12345-6789</td>
+                    <td>Pessoa Jurídica</td>
+                    <td>10/05/2021</td>
+                    <td>R$ 50,00</td>
+                    <td>Cheque</td>
+                    <td>Observação...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function () {
+            searchTable();
+        });
+    
+        function searchTable() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.querySelector(".retangulo2");
+            var tr = table.getElementsByTagName("tr");
+    
+            for (var i = 0; i < tr.length; i++) {
+                var matchFound = false;
+    
+                for (var j = 0; j < tr[i].getElementsByTagName("td").length; j++) {
+                    var td = tr[i].getElementsByTagName("td")[j];
+                    if (td) {
+                        var textValue = td.textContent || td.innerText;
+    
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                }
+    
+                if (matchFound) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

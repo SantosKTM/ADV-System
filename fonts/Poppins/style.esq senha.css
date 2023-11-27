@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'poppins-fina';
+    src: url(fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+    font-family: 'poppinsmedia';
+    src: url(fonts/Poppins/Poppins-Medium.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 90px;
+    height: auto;
+    z-index: 1; 
+}
+
+.quadrado {
+    border: 1px solid #bbbbbb;
+    height: 320px;
+    width: 370px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.quadrado .bemvindo {
+    padding-left: 25px;
+    padding-top: 40px;
+    font-family: 'poppins-fina', sans-serif;
+}
+
+.quadrado .esqueceu-senha {
+    padding-left: 25px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: 'poppins-fina', sans-serif;
+}
+
+.quadrado .entrada {
+    border: 1px #bbbbbb solid;
+    border-radius: 6px;
+    padding: 10px;
+    margin-right: 25px;
+    font-size: 16px;
+    color: #bbbbbb;
+}
+
+.quadrado .enviar {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 25px;
+    width: 300px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.quadrado .voltar {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.quadrado a {
+    text-decoration: none;
+    color: #4D4D4D;
+}
+
+.esqueceu-senha input[type="email"] {
+    width: 300px;
+}

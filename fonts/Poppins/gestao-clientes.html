@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="gestao-cliente.css">
+    <link rel="icon" href="imgs/icon redondo logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Gestão de Clientes</title>
+</head>
+<body>
+  <!--MENU-->
+  <div class="container">
+    <!--Cria uma barra de navegação usando as classes do Bootstrap para estilização.-->
+       <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+         
+         <!--Link para a página principal com um logotipo dentro da barra de navegação.-->
+         <a class="navbar-brand" href="teste-principal.html"><img src="imgs/logo principal.png" alt=""></a>
+         
+         <!-- Botão de alternância para telas menores (usado em dispositivos móveis), mostrando e ocultando itens do menu de navegação.-->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         
+         <!--Define a área do menu de navegação que pode ser colapsada.-->
+         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+           
+           <!--Lista não ordenada que contém os itens do menu de navegação.-->
+           <ul class="navbar-nav">
+             <!-- Itens de menu que têm a capacidade de exibir um menu suspenso (dropdown) ao serem clicados.-->
+             <li class="nav-item">
+               <a class="nav-link" href="#">
+                 Agenda
+               </a>
+             </li>
+   
+   
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Gestão
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="gestao-clientes.html">Gestão Clientes</a>
+                 <a class="dropdown-item" href="gestao-documentos.html">Gestão Documentos</a>
+                 <a class="dropdown-item" href="gestao-autos.html">Gestão Autos</a>
+                 <a class="dropdown-item" href="gestao-financeira.html">Gestão Financeira</a>
+               </div>
+             </li>
+   
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Relatórios
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="#">Relatórios de Casos</a>
+                 <a class="dropdown-item" href="#">Relatórios Financeiros</a>
+                 <a class="dropdown-item" href="#">Relatórios de Atividades</a>
+                 <a class="dropdown-item" href="#">Relatórios de Clientes</a>
+               </div>
+             </li>
+   
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Biblioteca Jurídica
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="#">Jurisprudência</a>
+                 <a class="dropdown-item" href="#">Consulta processual</a>
+               </div>
+             </li>
+   
+             <li class="nav-item">
+               <a class="nav-link" href="#">
+                   <img src="imgs/icone-usuario.png" alt="Ícone de Usuário" class="img-fluid rounded-circle" style="max-width: 35px;">
+               </a>
+             </li>
+             
+           </ul>
+         </div>
+       </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--FINAL MENU-->
+    <h2 class="inicio">Clientes</h2>
+
+    <a href="#">
+        <div class="retangulo1">
+            <div class="icone">
+                <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+            </div>
+            <p>Novo</p>
+        </div>
+    </a>
+    
+    <div class="table-responsive">
+      <div class = "table-container">
+          <table class="table retangulo2">
+              <thead>
+                    <tr class = "retangulo3">
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>CPF / CNPJ</th>
+                        <th>TELEFONE</th>
+                        <th>E-MAIL</th>
+                        <th>ENDEREÇO</th>
+                        <th>NASCIMENTO</th>
+                        <th>TIPO CLIENTE</th>
+                        <th>STATUS</th>
+                        <th>OBS</th>
+                    </tr>
+                </thead>
+                <tbody class="retangulo4">
+                    <tr>
+                        <td>4</td>
+                        <td>Maria Silva</td>
+                        <td>35679856000100</td>
+                        <td>(11) 98765-4321</td>
+                        <td>maria@email.com</td>
+                        <td>Rua das Flores, 123 - Centro</td>
+                        <td>10/04/1985</td>
+                        <td>Pessoa Física</td>
+                        <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>João da Silva</td>
+                        <td>24681254000180</td>
+                        <td>(11) 98765-4321</td>
+                        <td>joao@email.com</td>
+                        <td>Rua das Flores, 123 - Centro</td>
+                        <td>10/04/1985</td>
+                        <td>Pessoa Jurídica</td>
+                        <td><img class="status" src="public/images/ellipse-18.png" alt=""></td>
+                        <td>Observação do cliente.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ana Maria</td>
+                        <td>12345678000100</td>
+                        <td>(11) 98765-4321</td>
+                        <td>ana@email.com</td>
+                        <td>Rua das Flores, 123 - Centro</td>
+                        <td>10/04/1985</td>
+                        <td>Pessoa Física</td>
+                        <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Antônio Carlos</td>
+                        <td>98765432000100</td>
+                        <td>(11) 98765-4321</td>
+                        <td>antoniocarlos@email.com</td>
+                        <td>Rua das Flores, 123 - Centro</td>
+                        <td>10/04/1985</td>
+                        <td>Pessoa Física</td>
+                        <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                        <td></td>
+                    </tr>      
+                    <tr>
+                        <td>6</td>
+                        <td>Luiza Fernanda</td>
+                        <td>65498723000100</td>
+                        <td>(11) 98765-4321</td>
+                        <td>luizafnnd@email.com</td>
+                        <td>Rua das Flores, 123 - Centro</td>
+                        <td>10/04/1985</td>
+                        <td>Pessoa Física</td>
+                        <td><img class="status" src="public/images/elipse verde.png" alt=""></td>
+                        <td>Observação do cliente.</td>
+                    </tr>          
+                </tbody>
+            </table>
+        </div>    
+    </div>
+</body>
+</html>

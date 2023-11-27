@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+
+
+#menu {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand img{
+    width: 80px; 
+}
+
+#menu .user-icon {
+    width: 30px; 
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu li {
+    position: relative;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+}
+
+#menu ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background: white;
+}
+
+#menu ul ul li {
+    width: 200px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#menu ul ul li a {
+    padding: 10px 15px;
+}
+
+#menu li:hover > ul {
+    display: block;
+}
+
+main {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+main h2 {
+    margin-top: 10px;
+}
+
+.table-container {
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+button img {
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+}
+
+.andamento, .urgente, .concluido {
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.andamento {
+    background-color: rgb(248, 248, 176); 
+    color: #DFA510; 
+}
+
+.urgente {
+    padding-top: 15px;
+    background-color: rgb(248, 200, 200); 
+    color: red;
+    display: flex; /* Para usar flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+
+.concluido {
+    background-color: rgb(178, 241, 178); 
+    color: green; 
+}
+
+.legenda {
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    width: 250px;
+}
+
+.info {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info span {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-right: 10px;
+}
+
+.info p {
+    margin: 0;
+    color: #797979;
+    flex-grow: 1;
+    text-align: left;
+}
+
+
+
+#concluidoCount {
+    color: #1A932E;
+}
+
+#andamentoCount {
+    color: #DFA510;
+}
+
+#urgenteCount {
+    color: red;
+}
+
+#totalCount {
+    color: black;
+}
+
+.retangulo1 {
+    width: 84px;
+    height: 31px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #5EA3E2;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retangulo1 p {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    align-items: center;
+    text-align: center;
+}
+
+body a {
+    text-decoration: none;
+}
+
+.retangulo2 {
+    width: 90%; 
+    border-collapse: collapse;
+    margin: 20px 10px; 
+    padding: 10px;
+}
+
+.retangulo3 {
+    height: 43px;
+}
+
+.retangulo3 th {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.retangulo4 td {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+}
+
+
+.retangulo2 .status {
+    width: 13.26px;
+    height: 11.021px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+/* Estilos para telas menores */
+@media screen and (max-width: 767px) {
+    .legenda {
+        flex-direction: column; /* Ajusta para coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
+
+    .info {
+        flex-direction: row; /* Ajusta para linha */
+        align-items: center; /* Alinha itens verticalmente ao centro */
+        position: relative;
+        width: 100%; /* Para ocupar toda a largura disponível */
+    }
+
+    .info .number {
+        position: static; /* Remove a posição absoluta para alinhar na linha */
+        margin-right: 5px; /* Espaçamento entre o número e o texto */
+        font-size: 18px; /* Reduz o tamanho do número para telas menores */
+    }
+
+    .info p {
+        margin: 0;
+        color: #797979;
+        text-align: left;
+        padding-left: 0; /* Remove o recuo do texto */
+    }
+}
+
+

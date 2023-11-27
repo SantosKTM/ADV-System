@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/advogado.png">
+    <link rel="stylesheet" type="text/css" href="relatorio.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav id="menu">
+        <ul>
+            <li>
+                <img src="imgs/logo.png" alt="Logo da Empresa"> 
+            </li>
+            <li><a href="#">Agenda</a></li>
+            <li>
+                <a href="#">Gestão</a>
+                <ul>
+                    <li><a href="gestao-clientes.html">Gestão Clientes</a></li>
+                    <li><a href="gestao-documentos.html">Gestão Documentos</a></li>
+                    <li><a href="gestao-autos.html">Gestão Autos</a></li>
+                    <li><a href="gestao-financeira.html">Gestão Financeira</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Relatórios</a>
+                <ul>
+                    <li><a href="#">Relatórios de Casos</a></li>
+                    <li><a href="#">Relatórios Financeiros</a></li>
+                    <li><a href="#">Relatórios de Atividades</a></li>
+                    <li><a href="#">Relatórios de Clientes</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Biblioteca Jurídica</a>
+                <ul>
+                    <li><a href="#">Jurisprudência</a></li>
+                    <li><a href="#">Consulta processual</a></li>
+                </ul>
+            </li>
+            <li>
+                <img src="imgs/icone-usuario.png" alt="Ícone de Usuário">
+            </li>
+        </ul>
+    </nav>
+    <div class="inicio">
+        <h2>Relatórios de autos</h2>
+        <input type="text" id="searchInput" placeholder="Pesquisar">
+    </div>
+
+    <a href="#">
+        <div class="retangulo1">
+            <div class="icone">
+                <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+            </div>
+            <p>Novo</p>
+        </div>
+    </a>
+
+    <div class="table-container">
+        <table class="retangulo2">
+            <thead>
+                <tr class="retangulo3">
+                    <th>Nº Processo <a href="javascript:void(0);" class="filter" onclick="sortTable(0)">Filtrar</a></th>
+                    <th>Nome do cliente <a href="javascript:void(0);" class="filter" onclick="sortTable(1)">Filtrar</a></th>
+                    <th>Abertura do caso <a href="javascript:void(0);" class="filter" onclick="sortTable(2)">Filtrar</a></th>
+                    <th>Tipo de caso <a href="javascript:void(0);" class="filter" onclick="sortTable(3)">Filtrar</a></th>
+                    <th>Status <a href="javascript:void(0);" class="filter" onclick="sortTable(4)">Filtrar</a></th>
+                    <th>Imprimir</th>
+                    <th>Visualizar</th>
+                </tr>
+            </thead>
+            <tbody class="retangulo4">
+                <tr>
+                    <td>0056789</td>
+                    <td>João da Silva</td>
+                    <td>10/05/2021</td>
+                    <td>Cível</td>
+                    <td>Em andamento</td>
+                    <td><button><i class="fa fa-print"></i></button></td>
+                    <td><button><i class="fa fa-eye"></i></button></td>
+                </tr>
+                <tr>
+                    <td>0056789</td>
+                    <td>Maria da Silva</td>
+                    <td>10/05/2021</td>
+                    <td>Cível</td>
+                    <td>Concluído</td>
+                    <td><button><i class="fa fa-print"></i></button></td>
+                    <td><button><i class="fa fa-eye"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var input = document.getElementById("searchInput");
+        var originalTable = document.querySelector(".retangulo2");
+        var tr = originalTable.getElementsByTagName("tr");
+
+        input.addEventListener("input", function () {
+            searchTable();
+        });
+
+        function searchTable() {
+            var filter = input.value.toUpperCase();
+            var table = document.createElement('table');
+            table.className = "retangulo2";
+
+            for (var i = 0; i < tr.length; i++) {
+                var matchFound = false;
+
+                for (var j = 0; j < tr[i].getElementsByTagName("td").length; j++) {
+                    var td = tr[i].getElementsByTagName("td")[j];
+                    if (td) {
+                        var textValue = td.textContent || td.innerText;
+
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            matchFound = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (matchFound) {
+                    var newRow = table.insertRow(table.rows.length);
+                    newRow.innerHTML = tr[i].innerHTML;
+                }
+            }
+
+            // Substituir a tabela original pela nova tabela
+            originalTable.parentNode.replaceChild(table, originalTable);
+        }
+
+        function sortTable(columnIndex) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.querySelector(".retangulo2");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[columnIndex];
+                    y = rows[i + 1].getElementsByTagName("td")[columnIndex];
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+    
