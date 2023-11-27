@@ -2,14 +2,29 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Tela Rápida</title>
+  <title>ADV-System</title>
+  <link rel="icon" href="imgs/icon redondo logo.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @keyframes fadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    .logo-desaparecer {
+      opacity: 1;
+      animation: fadeOut 2s ease-in-out forwards; 
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <div class="row justify-content-center align-items-center vh-100">
       <div class="col-md-6 text-center">
-        <img src="imgs/logo principal.png" alt="Logo do Sistema" class="img-fluid">
+        <img src="imgs/logo principal.png" alt="Logo do Sistema" class="img-fluid logo-desaparecer">
       </div>
     </div>
   </div>
@@ -17,7 +32,7 @@
   <script>
     setTimeout(function() {
       window.location.href = 'login.html'; 
-    }, 1000); 
+    }, 1500); 
   </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
