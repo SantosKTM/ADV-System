@@ -116,18 +116,15 @@ body {
 .user-menu.active {
     display: block;
 }
-main {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
+
 main h2 {
     margin-top: 10px;
 }
 
 .table-container {
+    margin-right: 25px;
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 table {
@@ -172,8 +169,8 @@ button img {
     background-color: rgb(248, 200, 200); 
     color: red;
     display: flex; /* Para usar flexbox */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+    justify-content: center; 
 }
 
 
@@ -182,10 +179,8 @@ button img {
     color: green; 
 }
 
-/* Estilos para a caixa sombreada */
-/* Estilos para a caixa sombreada */
+
 .legenda {
-    margin-left: 20px;
     margin-top: 30px;
     padding: 10px;
     border-radius: 5px;
@@ -193,12 +188,11 @@ button img {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 300px;
+    width: 180px;
+    justify-content: flex-start;
+    margin-left: 25px;
 }
 
-/* Estilos para cada informação */
 .info {
     margin-bottom: 10px;
     display: flex;
@@ -217,9 +211,8 @@ button img {
     color: #797979;
     flex-grow: 1;
     text-align: left;
+
 }
-
-
 
 #concluidoCount {
     color: #1A932E;
@@ -243,11 +236,10 @@ button img {
     flex-shrink: 0;
     border-radius: 5px;
     background: #5EA3E2;
-    margin-left: 20px;
-    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 25px;
 }
 
 .retangulo1 p {
@@ -302,13 +294,75 @@ body a {
     vertical-align: middle;
 }
 
-@media screen and (max-width: 768px) {
-    .legenda-container {
-      margin-top: 30px; /* Ajuste conforme necessário */
-    }
+.selecao {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; 
+}
+
+.selecao input[type="checkbox"] {
+    margin-right: 10px; 
+}
+
+
+#imprimirDocumentos {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+#imprimirDocumentos img {
+    width: 20px; 
+    vertical-align: middle;
+    margin-left: 25px;
+}
+
+.selecao {
+    display: flex;
+    align-items: center;
+}
+
+#inputPesquisa {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 10px;
+    width: 200px;
+}
   
-    .table-container {
-      margin-top: 20px; /* Ajuste conforme necessário */
-    }
-  }
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 25px;
+}
+  
+.retangulo1 {
+    display: flex;
+    align-items: center;
+}
+  
+.retangulo1 p {
+}
+  
+#inputPesquisa {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 10px;
+    width: 200px;
+}
+  
+.selecao {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
   

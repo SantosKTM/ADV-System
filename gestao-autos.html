@@ -80,32 +80,42 @@
   </div>
 
   <main>
-    <h2>Autos</h2>
-    <a href="#">
-      <div class="retangulo1">
-        <div class="icone">
-          <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+    <div class="header">
+      <h2>Autos</h2>
+      <div class="selecao">
+        <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome...">
+        <div class="retangulo1">
+          <div class="icone">
+            <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+          </div>
+          <p>Novo</p>
         </div>
-        <p>Novo</p>
       </div>
-    </a>
+      <div class="selecao">
+        <input type="checkbox" id="selecionarTodos">
+        <label for="selecionarTodos">Selecionar Todos</label>
+        <button id="imprimirDocumentos"><img src="imgs/impressora.png" alt=""></button>
+      </div>
+    </div>
+    
+    
     <div class="legenda-container">
       <div class="legenda">
         <div class="info">
-            <span id="totalCount">0</span>
-            <p>Total de autos</p>
+          <span id="totalCount">0</span>
+          <p>Total</p>
         </div>
         <div class="info">
-            <span id="concluidoCount">0</span>
-            <p>Finalizados</p>
+          <span id="concluidoCount">0</span>
+          <p>Concluidos</p>
         </div>
         <div class="info">
-            <span id="andamentoCount">0</span>
-            <p>Em espera</p>
+          <span id="andamentoCount">0</span>
+          <p>Em espera</p>
         </div>
         <div class="info">
-            <span id="urgenteCount">0</span>
-            <p>Urgente</p>
+          <span id="urgenteCount">0</span>
+          <p>Urgente</p>
         </div>
       </div>
     </div>
@@ -117,6 +127,7 @@
       <table class="table">
             <thead>
                 <tr>
+                    <th></th>
                     <th>Nome</th>
                     <th>Responsável</th>
                     <th>Início</th>
@@ -128,58 +139,23 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Kyssila Thuane Morais Santos</td>
-                    <td>Rafael Augusto da Silva</td>
-                    <td>15/06/2021</td>
-                    <td>30/09/2021</td>
-                    <td>
-                        <div class="andamento">
-                            Espera
-                        </div>
-                    </td>
-                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
+                  <td><input type="checkbox" class="select-checkbox"></td>
+                  <td>Kyssila Thuane Morais Santos</td>
+                  <td>Rafael Augusto da Silva</td>
+                  <td>15/06/2021</td>
+                  <td>30/09/2021</td>
+                  <td>
+                    <div class="andamento">Espera</div>
+                  </td>
+                  <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
+                  <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
                 </tr>
                 <tr>
+                  <td><input type="checkbox" class="select-checkbox"></td>
                     <td>Lucas Antonio dos Reis</td>
                     <td>Maria Helena Ferreira</td>
                     <td>18/07/2021</td>
                     <td>24/09/2021</td>
-                    <td>
-                        <div class="concluido">Concluído</div>
-                    </td>
-                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
-                </tr>
-                <tr>
-                    <td>Luciano Alves de Oliveira</td>
-                    <td>João Paulo de Freitas</td>
-                    <td>20/08/2021</td>
-                    <td>28/09/2021</td>
-                    <td>
-                        <div class="urgente">
-                            <p>Urgente</p>
-                        </div>
-                    </td>
-                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
-                </tr>
-                <tr>
-                    <td>Marcos Antônio da Silva</td>
-                    <td>José Maria Sousa</td>
-                    <td>10/08/2021</td>
-                    <td>15/09/2021</td>
-                    <td>
-                        <div class="andamento">Espera</div>
-                    </td>
-                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
-                </tr>
-                <tr>   
-                    <td>Matheus Henrique de Moraes</td>
-                    <td>Ana Beatriz de Carvalho</td>
-                    <td>12/07/2021</td>
-                    <td>18/09/2021</td>
                     <td>
                         <div class="concluido">Concluído</div>
                     </td>
@@ -191,25 +167,9 @@
     </div>
   </div>
     
-
+  <script src="script-pesquisa-selecionar.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-        // Contagem de status
-        const concluidoCount = document.querySelectorAll('.concluido').length;
-        const andamentoCount = document.querySelectorAll('.andamento').length;
-        const urgenteCount = document.querySelectorAll('.urgente').length;
-
-        // Contagem total
-        const totalCount = concluidoCount + andamentoCount + urgenteCount;
-
-        // Atualiza as contagens na legenda
-        document.getElementById('concluidoCount').textContent = concluidoCount;
-        document.getElementById('andamentoCount').textContent = andamentoCount;
-        document.getElementById('urgenteCount').textContent = urgenteCount;
-        document.getElementById('totalCount').textContent = totalCount;
-  </script>
-
 </body>
 </html>
