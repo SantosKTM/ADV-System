@@ -389,3 +389,22 @@ tbody .retangulo4 td {
     display: block;
     font-size: 16px;
 }
+
+/* Seus estilos existentes */
+
+.non-editable {
+    margin-bottom: 10px;
+}
+
+.non-editable-field {
+    width: calc(50% - 20px);
+    min-height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    user-select: none; /* Evita a seleção de texto no campo */
+    cursor: not-allowed; /* Altera o cursor para indicar que não é editável */
+}

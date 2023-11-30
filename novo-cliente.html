@@ -81,8 +81,10 @@
   <div class="quad">
     <form action="POST">
         <h1>Novo Cliente</h1>
-        <label for="id">ID</label>
-        <input type="text" name="id" id="id" placeholder="Digite o ID"><br><br>
+        <div class="non-editable">
+          <label for="id">ID</label>
+          <div id="id" contenteditable="false" class="non-editable-field"></div>
+        </div>
         
         <label for="nome_completo">Nome Completo</label>
         <input type="text" name="nome_completo" id="nome_completo" placeholder="Digite o nome completo"><br><br>
@@ -155,5 +157,15 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function gerarID() {
+        const numeroAleatorio = Math.floor(Math.random() * 9000) + 1000;
+        const id = `CLI${numeroAleatorio}`;
+        const inputID = document.getElementById('id');
+        inputID.innerText = id;
+    }
+
+    window.onload = gerarID;
+</script>
 </body>
 </html>
