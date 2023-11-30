@@ -81,44 +81,38 @@
 
   <main>
     <div class="header">
-      <h2>Autos</h2>
+      <h2>Documentos</h2>
       <div class="selecao">
         <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome...">
-        <div class="retangulo1">
-          <div class="icone">
-            <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
-          </div>
-          <p>Novo</p>
-        </div>
       </div>
       <div class="selecao">
         <input type="checkbox" id="selecionarTodos">
         <label for="selecionarTodos">Selecionar Todos</label>
-        <button id="imprimirDocumentos"><img src="imgs/impressora.png" alt=""></button>
       </div>
     </div>
     
     
     <div class="legenda-container">
-      <div class="legenda">
+      <div class="legenda" style="margin-top: 0;">
         <div class="info">
           <span id="totalCount">0</span>
           <p>Total</p>
         </div>
         <div class="info">
-          <span id="concluidoCount">0</span>
-          <p>Concluidos</p>
+          <span id="rascunhoCount" style="color:red">0</span>
+          <p>Rascunho</p>
         </div>
         <div class="info">
-          <span id="andamentoCount">0</span>
-          <p>Em espera</p>
+          <span id="enviadoCount" style="color: #DFA510;">0</span>
+          <p>Enviado</p>
         </div>
         <div class="info">
-          <span id="urgenteCount">0</span>
-          <p>Urgente</p>
+          <span id="assinadoCount" style="color: green;">0</span>
+          <p>Assinado</p>
         </div>
       </div>
     </div>
+    
   </main>
 
 
@@ -128,11 +122,11 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>Nome</th>
-                    <th>Responsável</th>
-                    <th>Início</th>
-                    <th>Final</th>
+                    <th>Nome do documento</th>
+                    <th>Recebedor</th>
+                    <th>Data de Criação</th>
                     <th>Status</th>
+                    <th>Modificação</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -140,37 +134,126 @@
             <tbody>
                 <tr>
                   <td><input type="checkbox" class="select-checkbox"></td>
-                  <td>Kyssila Thuane Morais Santos</td>
-                  <td>Rafael Augusto da Silva</td>
-                  <td>15/06/2021</td>
-                  <td>30/09/2021</td>
-                  <td>
-                    <div class="andamento">Espera</div>
-                  </td>
-                  <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                  <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
+                  <td>Documento 1</td>
+                  <td>Jonathan</td>
+                  <td>23/05/2020</td>
+                  <td>Rascunho</td>
+                  <td>24/06/2020</td>
+                  <td><button><img src="/public/images/group.png" alt=""></button></td>
+                  <td><button><img src="/public/images/vector.png" alt=""></button></td>
                 </tr>
                 <tr>
                   <td><input type="checkbox" class="select-checkbox"></td>
-                    <td>Lucas Antonio dos Reis</td>
-                    <td>Maria Helena Ferreira</td>
-                    <td>18/07/2021</td>
-                    <td>24/09/2021</td>
-                    <td>
-                        <div class="concluido">Concluído</div>
-                    </td>
-                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
+                  <td>Documento 2</td>
+                  <td>Maria</td>
+                  <td>27/08/2020</td>
+                  <td>Enviado</td>
+                  <td>29/09/2020</td>
+                  <td><button><img src="/public/images/group.png" alt=""></button></td>
+                  <td><button><img src="/public/images/vector.png" alt=""></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-checkbox"></td>
+                  <td>Documento 3</td>
+                  <td>Joãozinho</td>
+                  <td>15/07/2020</td>
+                  <td>Assinado</td>
+                  <td>22/08/2020</td>
+                  <td><button><img src="/public/images/group.png" alt=""></button></td>
+                  <td><button><img src="/public/images/vector.png" alt=""></button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="select-checkbox"></td>
+                  <td>Documento 4</td>
+                  <td>Ana</td>
+                  <td>20/06/2020</td>
+                  <td>Assinado</td>
+                  <td>25/07/2020</td>
+                  <td><button><img src="/public/images/group.png" alt=""></button></td>
+                  <td><button><img src="/public/images/vector.png" alt=""></button></td>
                 </tr>
             </tbody>
         </table>
     </div>
   </div>
     
-  <script src="script-pesquisa-selecionar.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Seu código JavaScript aqui
+      document.getElementById("inputPesquisa").addEventListener("input", function () {
+        let filtro = this.value.toLowerCase().trim(); // Convertendo o texto para minúsculas e removendo espaços extras
+        let linhas = document.querySelectorAll(".table tbody tr");
+  
+        linhas.forEach(function (linha) {
+          let nomeDocumento = linha.querySelector("td:nth-child(2)").textContent.toLowerCase(); // Obtendo o texto do nome do documento
+          if (nomeDocumento.includes(filtro)) {
+            linha.style.display = "table-row";
+          } else {
+            linha.style.display = "none";
+          }
+        });
+      });
+
+        document.getElementById("inputPesquisa").addEventListener("input", function() {
+            // Função para filtrar a tabela
+            let filtro = this.value.toLowerCase();
+            let linhas = document.querySelectorAll(".table tbody tr");
+
+            linhas.forEach(function(linha) {
+                let texto = linha.textContent.toLowerCase();
+                if (texto.includes(filtro)) {
+                    linha.style.display = "table-row";
+                } else {
+                    linha.style.display = "none";
+                }
+            });
+        });
+
+        document.getElementById("selecionarTodos").addEventListener("change", function () {
+          const checkboxes = document.querySelectorAll(".select-checkbox");
+          checkboxes.forEach(function (checkbox) {
+              checkbox.checked = this.checked;
+          }, this);
+      });
+
+      function calcularTotalDocumentos() {
+        const linhas = document.querySelectorAll(".table tbody tr");
+        let rascunhoCount = 0;
+        let enviadoCount = 0;
+        let assinadoCount = 0;
+  
+        linhas.forEach(function (linha) {
+          const status = linha.querySelector("td:nth-child(5)").textContent.toLowerCase();
+  
+          if (status === "rascunho") {
+            rascunhoCount++;
+          } else if (status === "enviado") {
+            enviadoCount++;
+          } else if (status === "assinado") {
+            assinadoCount++;
+          }
+        });
+  
+        document.getElementById('totalCount').textContent = linhas.length;
+        document.getElementById('rascunhoCount').textContent = rascunhoCount;
+        document.getElementById('enviadoCount').textContent = enviadoCount;
+        document.getElementById('assinadoCount').textContent = assinadoCount;
+      }
+  
+      calcularTotalDocumentos();
+  
+      document.getElementById("inputPesquisa").addEventListener("input", function () {
+        calcularTotalDocumentos();
+      });
+  
+      document.getElementById("selecionarTodos").addEventListener("change", function () {
+        calcularTotalDocumentos();
+      });
+    });
+</script>
 </body>
 </body>
 </html>

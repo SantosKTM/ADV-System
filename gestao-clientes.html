@@ -81,15 +81,17 @@
 
   <main>
     <div class="header">
-      <h2>Autos</h2>
+      <h2>Clientes</h2>
       <div class="selecao">
         <input type="text" id="inputPesquisa" placeholder="Pesquisar por nome...">
-        <div class="retangulo1">
-          <div class="icone">
-            <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+        <a href="novo-cliente.html">
+          <div class="retangulo1">
+            <div class="icone">
+              <img src="public/images/icon-plus.png" alt="Ícone de Adicionar">
+            </div>
+            <p>Novo</p>
           </div>
-          <p>Novo</p>
-        </div>
+        </a>
       </div>
       <div class="selecao">
         <input type="checkbox" id="selecionarTodos">
@@ -98,28 +100,7 @@
       </div>
     </div>
     
-    
-    <div class="legenda-container">
-      <div class="legenda">
-        <div class="info">
-          <span id="totalCount">0</span>
-          <p>Total</p>
-        </div>
-        <div class="info">
-          <span id="concluidoCount">0</span>
-          <p>Concluidos</p>
-        </div>
-        <div class="info">
-          <span id="andamentoCount">0</span>
-          <p>Em espera</p>
-        </div>
-        <div class="info">
-          <span id="urgenteCount">0</span>
-          <p>Urgente</p>
-        </div>
-      </div>
-    </div>
-  </main>
+
 
 
   <div class="table-container">
@@ -128,48 +109,108 @@
             <thead>
                 <tr>
                     <th></th>
+                    <th>ID</th>
                     <th>Nome</th>
-                    <th>Responsável</th>
-                    <th>Início</th>
-                    <th>Final</th>
-                    <th>Status</th>
-                    <th></th>
-                    <th></th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Nascimento</th>
+                    <th>Tipo Cliente</th>
+                    <th>Data de Cadastro</th>
+                    <th>Obs</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                  <td><input type="checkbox" class="select-checkbox"></td>
-                  <td>Kyssila Thuane Morais Santos</td>
-                  <td>Rafael Augusto da Silva</td>
-                  <td>15/06/2021</td>
-                  <td>30/09/2021</td>
-                  <td>
-                    <div class="andamento">Espera</div>
-                  </td>
-                  <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                  <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox" class="select-checkbox"></td>
-                    <td>Lucas Antonio dos Reis</td>
-                    <td>Maria Helena Ferreira</td>
-                    <td>18/07/2021</td>
-                    <td>24/09/2021</td>
-                    <td>
-                        <div class="concluido">Concluído</div>
-                    </td>
-                    <td><button type="submit"><img src="imgs/lapis.png" alt=""></button></td>
-                    <td><button type="submit"><img src="imgs/olho.png" alt=""></button></td>
-                </tr>
+              <tr>
+                <td><input type="checkbox" class="select-checkbox"></td>
+                <td>CLI01</td>
+                <td>José da Silva</td>
+                <td>123.456.789-00</td>
+                <td>Rua das Flores, nº 123 - Bairro</td>
+                <td>(11) 99999-9999</td>
+                <td>jose@email.com.br</td>
+                <td>10/01/1990</td>
+                <td>PF</td>
+                <td>10/01/2020</td>
+                <td>Sem Observação</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="select-checkbox"></td>
+                <td>CLI2</td>
+                <td>Maria da Silva</td>
+                <td>123.456.789-00</td>
+                <td>Rua das Flores, nº 123 - Bairro</td>
+                <td>(11) 99999-9999</td>
+                <td>maria@email.com.br</td>
+                <td>10/01/1990</td>
+                <td>PJ</td>
+                <td>10/01/2020</td>
+                <td>Sem Observação</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="select-checkbox"></td>
+                <td>CLI3</td>
+                <td>João da Silva</td>
+                <td>123.456.789-00</td>
+                <td>Rua das Flores, nº 123 - Bairro</td>
+                <td>(11) 99999-9999</td>
+                <td>joao@email.com.br</td>
+                <td>10/01/1990</td>
+                <td>PF</td>
+                <td>10/01/2020</td>
+                <td>Sem Observação</td>
+              </tr>
             </tbody>
         </table>
     </div>
   </div>
     
-  <script src="script-pesquisa-selecionar.js"></script>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputPesquisa = document.getElementById('inputPesquisa');
+      const linhasTabela = document.querySelectorAll('.table tbody tr');
+  
+      inputPesquisa.addEventListener('input', function() {
+        const termoPesquisa = inputPesquisa.value.toLowerCase();
+  
+        linhasTabela.forEach(function(linha) {
+          const textoLinha = linha.textContent.toLowerCase();
+          if (textoLinha.includes(termoPesquisa)) {
+            linha.style.display = 'table-row';
+          } else {
+            linha.style.display = 'none';
+          }
+        });
+      });
+  
+      const checkboxSelecionarTodos = document.getElementById('selecionarTodos');
+      const checkboxes = document.querySelectorAll('.select-checkbox');
+  
+      checkboxSelecionarTodos.addEventListener('change', function() {
+        checkboxes.forEach(function(checkbox) {
+          checkbox.checked = checkboxSelecionarTodos.checked;
+        });
+      });
+  
+      checkboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+          if (!this.checked) {
+            checkboxSelecionarTodos.checked = false;
+          } else {
+            const allChecked = [...checkboxes].every(function(checkbox) {
+              return checkbox.checked;
+            });
+            checkboxSelecionarTodos.checked = allChecked;
+          }
+        });
+      });
+    });
+  </script>
+  
 </body>
 </html>
