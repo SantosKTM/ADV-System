@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+
+#menu {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand img{
+    width: 80px; 
+}
+
+#menu .user-icon {
+    width: 30px; 
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu li {
+    position: relative;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+}
+
+#menu ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background: white;
+}
+
+#menu ul ul li {
+    width: 200px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#menu ul ul li a {
+    padding: 10px 15px;
+}
+
+#menu li:hover > ul {
+    display: block;
+}
+
+/* Estilos para o ícone do menu */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    #menu .logo {
+        order: -1;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+
+    #menu .user-icon {
+        margin-left: auto;
+    }
+
+    #menu ul {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    #menu ul:not(.active) {
+        display: none;
+    }
+
+    #menu ul.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+    }
+
+    /* Mostrar o ícone do menu */
+    .menu-icon {
+        display: block;
+    }
+}
+
+.user-icon-wrapper {
+    position: relative;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 0;
+    list-style: none;
+}
+
+.user-menu.active {
+    display: block;
+}
+
+#menu {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 80px; 
+}
+
+#menu .user-icon {
+    width: 30px; 
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu li {
+    position: relative;
+}
+
+#menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+}
+
+#menu ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background: white;
+}
+
+#menu ul ul li {
+    width: 200px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#menu ul ul li a {
+    padding: 10px 15px;
+}
+
+#menu li:hover > ul {
+    display: block;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+    }
+
+    #menu .logo {
+        order: -1;
+        margin-right: auto;
+        margin-left: 10px;
+    }
+
+    #menu .user-icon {
+        margin-left: auto;
+    }
+
+    #menu ul {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    #menu ul:not(.active) {
+        display: none;
+    }
+
+    #menu ul.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.user-icon-wrapper {
+    position: relative;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 0;
+    list-style: none;
+}
+
+.user-menu.active {
+    display: block;
+}
+
+.tabela-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.table-container {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    overflow-x: auto;
+}
+
+table.retangulo2 {
+    width: 95%;
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+thead .retangulo3 th {
+    padding: 8px;
+    text-align: left;
+}
+
+tbody .retangulo4 td {
+    padding: 8px;
+}
+
+.status {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quad {
+    width: 90%;
+    height: 90%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 0.5px solid #878787;
+    background: #FFF;
+    box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.quad h1 {
+    color: #000;
+    font-family: 'Poppins', sans-serif;    
+    font-size: 31px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+/* Defina o estilo para o contêiner da quad */
+.quad {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para os cabeçalhos do formulário */
+.quad h2 {
+    font-family: 'Poppins', sans-serif;    
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para os títulos dos campos */
+.quad label {
+    display: block;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;    
+}
+
+/* Outros estilos... */
+
+
+/* Estilo para os campos de entrada */
+.quad input[type="text"],
+.quad input[type="date"],
+.quad input[type="email"],
+.quad input[type="tel"],
+.quad input[type="number"],
+.quad select,
+.quad textarea,
+.quad input[type="file"],
+.quad input[type="submit"],
+.quad input[input="reset"] 
+{
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+/* Restante do seu CSS... */
+
+/* Estilo para os botões */
+.quad input[type="submit"],
+.quad input[type="reset"] {
+    width: calc(50% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Estilo específico para o botão de Cancelar */
+.quad input[type="reset"] {
+    background-color: #F00;
+    color: white;
+}
+
+/* Estilo específico para o botão de Cadastrar */
+.quad input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+.quad input[type="file"] {
+    border: none;
+    background-color: transparent;
+}
+
+.quad label[for="arquivo"] {
+    display: block;
+    font-size: 16px;
+}
