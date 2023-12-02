@@ -259,6 +259,11 @@ body a {
     text-decoration: none;
 }
 
+form h1 {
+    font-size: 31px;
+    margin-bottom: 18px;
+}
+
 .retangulo2 {
     width: 90%; 
     border-collapse: collapse;
@@ -363,3 +368,48 @@ body a {
     margin-top: 5px;
 }
   
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilos para os campos do formulário */
+form label {
+    display: block;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para os botões */
+form button {
+    padding: 8px 16px;
+    margin-right: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Estilização específica para os botões de cancelar e cadastrar */
+form button[type="button"] {
+    background-color: red;
+    color: white;
+}
+
+form button[type="submit"] {
+    background-color: green;
+    color: white;
+}

@@ -285,112 +285,52 @@ tbody .retangulo4 td {
     align-items: center;
 }
 
-.quad {
-    width: 90%;
-    height: 90%;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 0.5px solid #878787;
-    background: #FFF;
-    box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.05);
-    margin: 0 auto;
-    margin-top: 20px;
-}
-
-.quad h1 {
-    color: #000;
-    font-family: 'Poppins', sans-serif;    
-    font-size: 31px;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-}
-
-/* Defina o estilo para o contêiner da quad */
-.quad {
-    width: 400px;
-    margin: 0 auto;
+form {
+    margin: 20px;
     padding: 20px;
-    border-radius: 10px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Estilo para os cabeçalhos do formulário */
-.quad h2 {
-    font-family: 'Poppins', sans-serif;    
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* Estilo para os títulos dos campos */
-.quad label {
+/* Estilos para os campos do formulário */
+form label {
     display: block;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;    
 }
 
-/* Outros estilos... */
-
-
-/* Estilo para os campos de entrada */
-.quad input[type="text"],
-.quad input[type="date"],
-.quad input[type="email"],
-.quad input[type="tel"],
-.quad input[type="number"],
-.quad select,
-.quad textarea,
-.quad input[type="file"],
-.quad input[type="submit"],
-.quad input[input="reset"] 
-{
-    width: calc(100% - 20px);
-    padding: 10px;
+form input[type="text"],
+form input[type="date"],
+form select,
+form textarea,
+form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-family: 'poppins', sans-serif; /* Aplicando a fonte Poppins */
 }
-/* Restante do seu CSS... */
 
-/* Estilo para os botões */
-.quad input[type="submit"],
-.quad input[type="reset"] {
-    width: calc(50% - 20px);
-    padding: 10px;
-    margin-top: 10px;
-    margin-right: 10px;
+/* Estilos para os botões */
+form button {
+    padding: 8px 16px;
+    margin-right: 8px;
     border: none;
-    border-radius: 16px;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-/* Estilo específico para o botão de Cancelar */
-.quad input[type="reset"] {
-    background-color: #F00;
+/* Estilização específica para os botões de cancelar e cadastrar */
+form button[type="button"] {
+    background-color: red;
     color: white;
 }
 
-/* Estilo específico para o botão de Cadastrar */
-.quad input[type="submit"] {
-    background-color: #4CAF50;
+form button[type="submit"] {
+    background-color: green;
     color: white;
 }
-
-
-
-.quad input[type="file"] {
-    border: none;
-    background-color: transparent;
-}
-
-.quad label[for="arquivo"] {
-    display: block;
-    font-size: 16px;
-}
-
-/* Seus estilos existentes */
 
 .non-editable {
     margin-bottom: 10px;
@@ -407,4 +347,38 @@ tbody .retangulo4 td {
     align-items: center;
     user-select: none; /* Evita a seleção de texto no campo */
     cursor: not-allowed; /* Altera o cursor para indicar que não é editável */
+}
+
+
+form h1 {
+    font-size: 31px;
+    margin-bottom: 18px;
+}
+
+/* Estilos para o campo de e-mail */
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'poppins', sans-serif;
+}
+
+input[type="number"]{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'poppins', sans-serif;
+}
+/* Estilos para o campo de telefone */
+input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'poppins', sans-serif;
 }

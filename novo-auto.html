@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style-autos.css">
+    <link rel="icon" href="imgs/icon redondo logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Novo Auto</title>
+</head>
+<body>
+  <div class="container">
+    <!--Cria uma barra de navegação usando as classes do Bootstrap para estilização.-->
+       <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+         
+         <!--Link para a página principal com um logotipo dentro da barra de navegação.-->
+         <a class="navbar-brand" href="principal.html"><img src="imgs/logo principal.png" alt=""></a>
+         
+         <!-- Botão de alternância para telas menores (usado em dispositivos móveis), mostrando e ocultando itens do menu de navegação.-->
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         
+         <!--Define a área do menu de navegação que pode ser colapsada.-->
+         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+           
+           <!--Lista não ordenada que contém os itens do menu de navegação.-->
+           <ul class="navbar-nav">
+             <!-- Itens de menu que têm a capacidade de exibir um menu suspenso (dropdown) ao serem clicados.-->
+             <li class="nav-item">
+               <a class="nav-link" href="#">
+                 Agenda
+               </a>
+             </li>
+   
+   
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Gestão
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="gestao-clientes.html">Gestão Clientes</a>
+                 <a class="dropdown-item" href="gestao-documentos.html">Gestão Documentos</a>
+                 <a class="dropdown-item" href="gestao-autos.html">Gestão Autos</a>
+                 <a class="dropdown-item" href="gestao-financeira.html">Gestão Financeira</a>
+               </div>
+             </li>
+   
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Relatórios
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="#">Relatórios de Casos</a>
+                 <a class="dropdown-item" href="#">Relatórios Financeiros</a>
+                 <a class="dropdown-item" href="#">Relatórios de Atividades</a>
+                 <a class="dropdown-item" href="#">Relatórios de Clientes</a>
+               </div>
+             </li>
+   
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Biblioteca Jurídica
+               </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="#">Jurisprudência</a>
+                 <a class="dropdown-item" href="#">Consulta processual</a>
+               </div>
+             </li>
+   
+             <li class="nav-item">
+               <a class="nav-link" href="#">
+                   <img src="imgs/icone-usuario.png" alt="Ícone de Usuário" class="img-fluid rounded-circle" style="max-width: 35px;">
+               </a>
+             </li>
+           </ul>
+         </div>
+       </nav>
+  </div>
+
+  <form action="/caminho-do-processamento" method="POST" enctype="multipart/form-data">
+    <h1>Novo Auto</h1>
+    <label for="numeroProcesso">Número do Processo:</label>
+    <input type="text" id="numeroProcesso" name="numeroProcesso" required><br><br>
+
+    <label for="cpfCliente">CPF do Cliente:</label>
+    <input type="text" id="cpfCliente" name="cpfCliente" required><br><br>
+
+    <label for="descricaoCaso">Descrição do Caso:</label><br>
+    <textarea id="descricaoCaso" name="descricaoCaso" rows="4" cols="50" required></textarea><br><br>
+
+    <label for="dataInicio">Data de Início:</label>
+    <input type="date" id="dataInicio" name="dataInicio" required><br><br>
+
+    <label for="dataEncerramento">Data de Encerramento:</label>
+    <input type="date" id="dataEncerramento" name="dataEncerramento" required><br><br>
+
+    <label >Selecione os Tribunais:</label>
+    <div class="row mb-3">
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal1" name="tribunais" value="tribunal1">
+            <label class="form-check-label" for="tribunal1">Supremo Tribunal Federal (STF)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal2" name="tribunais" value="tribunal2">
+            <label class="form-check-label" for="tribunal2">Superior Tribunal de Justiça (STJ)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal3" name="tribunais" value="tribunal3">
+            <label class="form-check-label" for="tribunal3">Tribunal Regional Federal da 1ª Região (TRF-1)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal4" name="tribunais" value="tribunal4">
+            <label class="form-check-label" for="tribunal4">Tribunal Regional Federal da 2ª Região (TRF-2)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal5" name="tribunais" value="tribunal5">
+            <label class="form-check-label" for="tribunal5">Tribunal Regional Federal da 3ª Região (TRF-3)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal6" name="tribunais" value="tribunal6">
+            <label class="form-check-label" for="tribunal6">Tribunal Regional Federal da 4ª Região (TRF-4)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal7" name="tribunais" value="tribunal7">
+            <label class="form-check-label" for="tribunal7">Tribunal Regional Federal da 5ª Região (TRF-5)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal8" name="tribunais" value="tribunal8">
+            <label class="form-check-label" for="tribunal8">Tribunal de Justiça do Estado de São Paulo (TJ-SP)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal9" name="tribunais" value="tribunal9">
+            <label class="form-check-label" for="tribunal9">Tribunal de Justiça do Rio de Janeiro (TJ-RJ)</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="tribunal10" name="tribunais" value="tribunal10">
+            <label class="form-check-label" for="tribunal10">Tribunal de Justiça do Rio Grande do Sul (TJ-RS)</label>
+        </div>
+        
+            <!-- Adicione mais caixas de seleção conforme necessário -->
+        </div>
+    </div>
+
+    <label for="idAdvogado">ID do Advogado:</label>
+    <input type="text" id="idAdvogado" name="idAdvogado" required><br><br>
+
+    <label for="statusCaso">Status do Caso:</label>
+    <select id="statusCaso" name="statusCaso">
+        <option value="finalizado">Finalizado</option>
+        <option value="emEspera">Em Espera</option>
+        <option value="urgente">Urgente</option>
+    </select><br><br>
+
+    <label for="documentos">Documentos Relacionados:</label>
+    <input type="file" id="documentos" name="documentos" multiple><br><br>
+
+    <label for="observacoes">Observações:</label><br>
+    <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea><br><br>
+
+    <button type="button" style="background-color: red; color: white;">Cancelar</button>
+    <button type="submit" style="background-color: green; color: white;">Cadastrar</button>
+</form>  
+    
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
